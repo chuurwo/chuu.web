@@ -1,0 +1,188 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font to the body */
+    position: relative; /* Add relative positioning to body */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth background and color change */
+    overflow: hidden;
+}
+
+.profile-card {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth scaling and background change */
+}
+
+.profile-card:hover {
+    transform: scale(1.05); /* Scale up the profile card slightly on hover */
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.profile-card p {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    padding: 0 10px; /* Add padding to center the text better */
+}
+
+.profile-card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e15863;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Add margin to separate from the icons */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for smooth background and color change */
+}
+
+.profile-card button:hover {
+    background-color: #d14853;
+}
+
+.links {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center the icons horizontally */
+}
+
+.links a {
+    text-decoration: none;
+    margin: 0 5px; /* Adjust margin to space out the icons */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    margin-top: 10px; /* Add margin to separate from the button */
+}
+
+.social-icons .social-icon {
+    font-size: 24px;
+    color: #e15863; /* Change this to your desired color */
+    margin: 0 5px; /* Adjust margin to space out the icons */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.social-icons .social-icon:hover {
+    color: #d14853; /* Change this to your desired hover color */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .profile-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .profile-card button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .profile-card button:hover {
+    background-color: #444;
+}
+
+body.dark-mode .social-icons .social-icon {
+    color: #ffffff;
+}
+
+body.dark-mode .social-icons .social-icon:hover {
+    color: #bbbbbb;
+}
+
+/* Add styles for the dark mode toggle button */
+.dark-mode-toggle {
+    position: fixed; /* Position fixed to place it relative to the viewport */
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e15863;
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.dark-mode-toggle:hover {
+    color: #d14853;
+}
+
+body.dark-mode .dark-mode-toggle {
+    color: #ffffff;
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    color: #bbbbbb;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover .tooltip {
+    opacity: 1;
+}
+
+/* Animation on page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-card.animate {
+    animation: fadeInUp 1s ease;
+}
